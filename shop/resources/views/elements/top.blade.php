@@ -1,4 +1,236 @@
-<header class="header">
+<header class="header1">
+    <nav class="header__navbar">
+        <ul class="header__navbar-list">
+           <li class="header__navbar-item header__navbar-item-has-qr header__navbar-item---saparate">Vào cửa hàng trên ứng dụng
+              <!-- QR CODE -->
+            <div class="header__qr">
+                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5b6e787c2e5ee052.png" alt="QR code" class="header__qr-img">
+                   <div class="header__qr-apps">
+                       <a href=""><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/135555214a82d8e1.png" alt="Google play" class="header__qr-link"></a>
+                       <a href=""><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1fddd5ee3e2ead84.png" alt="App Store" class="header__qr-link"></a>
+                   </div>
+                 </div>  
+            
+            </li>
+          
+
+           <li class="header__navbar-item">
+              <span class="header__navbar-title--no-pointer">Kết nối</span>
+               <a href="" class="header__navbar-icon-link">
+                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+               </a>
+         
+               <a href="" class="header__navbar-icon-link">
+                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+               </a>
+              
+              
+           </li>
+        </ul>
+<!-- Modal Thông báo -->
+        <ul class="header__navbar-list">
+           <li class="header__navbar-item header__navbar-item--has-notify ">
+               <a href="" class="header__navbar-icon-link">
+                <i class="header__navbar-icon fa-solid fa-bell"></i>
+                Thông báo
+                </a>
+                <div class="header__notify">
+                    <header class="header__notify-header">
+                        <h3>Thông báo mới nhận</h3>
+                    </header>
+                       <ul class="header__notify-list">
+                          <li class="header__notify-item header__notify-item--viewed">
+                              <a href="" class="header__notify-link">
+                                    <img src="https://product.hstatic.net/1000391653/product/ohu113-3_e61850de0bd249c1b1d18136d356b0ca_69f3a0031b0640978e91a365d42075d5.jpg" alt="" class="heaher__notify-img">
+                                     <div class="header__notify-info">
+                                        <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                        <span class="header__notify-descriotion">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                    </div>
+                               </a>
+                            </li> 
+
+                            <li class="header__notify-item header__notify-item--viewed">
+                                <a href="" class="header__notify-link">
+                                      <img src="https://product.hstatic.net/1000391653/product/ohu113-3_e61850de0bd249c1b1d18136d356b0ca_69f3a0031b0640978e91a365d42075d5.jpg" alt="" class="heaher__notify-img">
+                                       <div class="header__notify-info">
+                                          <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                          <span class="header__notify-descriotion">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                      </div>
+                                 </a>
+                              </li>
+
+
+                              <li class="header__notify-item header__notify-item--viewed">
+                                <a href="" class="header__notify-link">
+                                      <img src="https://product.hstatic.net/1000391653/product/ohu113-3_e61850de0bd249c1b1d18136d356b0ca_69f3a0031b0640978e91a365d42075d5.jpg" alt="" class="heaher__notify-img">
+                                       <div class="header__notify-info">
+                                          <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                          <span class="header__notify-descriotion">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                      </div>
+                                 </a>
+                              </li>
+
+                              <li class="header__notify-item">
+                                <a href="" class="header__notify-link">
+                                      <img src="https://product.hstatic.net/1000391653/product/ohu113-3_e61850de0bd249c1b1d18136d356b0ca_69f3a0031b0640978e91a365d42075d5.jpg" alt="" class="heaher__notify-img">
+                                       <div class="header__notify-info">
+                                          <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                          <span class="header__notify-descriotion">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                      </div>
+                                 </a>
+                              </li>
+                              
+                              <li class="header__notify-item">
+                                <a href="" class="header__notify-link">
+                                      <img src="https://product.hstatic.net/1000391653/product/ohu113-3_e61850de0bd249c1b1d18136d356b0ca_69f3a0031b0640978e91a365d42075d5.jpg" alt="" class="heaher__notify-img">
+                                       <div class="header__notify-info">
+                                          <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                          <span class="header__notify-descriotion">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                      </div>
+                                 </a>
+                              </li>
+                       </ul>
+                       <footer class="header__notify-footer">
+                            <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                       </footer>
+
+
+                   </div>
+           </li>
+           <li class="header__navbar-item">
+               <a href="" class="header__navbar-icon-link">
+                <i class="header__navbar-icon fa-solid fa-question"></i>
+                Trợ giúp
+                </a>
+           </li>
+           <li class="header__navbar-register header__navbar-item header__navbar-item--strong header__navbar-item---saparate">Đăng ký</li>
+           <li class="header__navbar-login header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+        </ul>
+    </nav>
+<!-- Header with search -->
+    <div class="header-with-search">
+        <div class="header__logo">
+            <img src="https://storage.googleapis.com/ops-shopee-files-live/live/affiliate-blog/2019/05/logo-full-white.png " alt="SHOPEE">
+        </div>
+
+        <div class="header__search">
+            <div class="header__search-input-wrap">
+                <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+               <!-- Search history -->
+                <div class="header__search-history">
+                    <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                    <ul class="header__search-history-list">
+                        <li class="header__search-history-item">
+                            <a href="">Kem dưỡng da</a>
+                        </li>
+                        <li class="header__search-history-item">
+                            <a href="">Kem trị mụn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__search-select">
+                <span class="header__search-select-lable">Trong shop</span>
+                <i class=" header__search-select-icon fa-solid fa-chevron-down"></i>
+                <ul class="header__search-option">
+                    <li class="header__search-option-item header__search-option-item--active">
+                         <span>Trong shop</span>
+                         <i class="fa-solid fa-check "></i>
+                    </li>
+                    <li class="header__search-option-item">
+                        <span>Ngoài shop</span>
+                        <i class="fa-solid fa-check"></i>
+                   </li>
+                </ul>
+
+            </div>
+            <button class="header__search-btn">
+                <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <!-- No cart "header__cart-list--no-cart" -->
+        <div class="header__cart">
+            <i class="fa-solid fa-cart-shopping header__cart-icon"></i>
+            <span class="header__cart-notice">3</span>
+            <div class="header__cart-list">
+                <img src="https://bizweb.dktcdn.net/100/446/472/themes/854235/assets/cart_empty_background.png?1708527756756" alt="" class="header__cart-no-cart-img">
+                <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+            
+                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                <ul class="header__cart-list-item">
+                    <!-- Cart -->
+                    <li class="header__cart-item">
+                        <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22120-kdb15iqg8mkv92" alt="" class="header__cart-img">
+                        <div class="header__cart-item-info">
+                            <div class="header__cart-item-head">
+                                <h5 class="header__cart-item-name">Đồng hồ thời trang thể thao nam nữ...</h5>
+                              <div class="header__cart-item-price-wrap">
+                                <span class="header__cart-item-price">300.000đ</span>
+                                <span class="header__cart-item-multifly">x</span>
+                                <span class="header__cart-item-qnt">1</span>
+                              </div>
+                    
+                            </div>
+                            <div class="header__cart-item-body">
+                                <span class="header__cart-item-description">Phân loại hàng: Tốt</span>                                        </span>
+                                <span class="header__cart-item-remove">Xóa</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="header__cart-item">
+                        <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22120-kdb15iqg8mkv92" alt="" class="header__cart-img">
+                        <div class="header__cart-item-info">
+                            <div class="header__cart-item-head">
+                                <h5 class="header__cart-item-name">Đồng hồ thời trang thể thao nam nữ...</h5>
+                              <div class="header__cart-item-price-wrap">
+                                <span class="header__cart-item-price">300.000đ</span>
+                                <span class="header__cart-item-multifly">x</span>
+                                <span class="header__cart-item-qnt">1</span>
+                              </div>
+                    
+                            </div>
+                            <div class="header__cart-item-body">
+                                <span class="header__cart-item-description">Phân loại hàng: Tốt</span>                                        </span>
+                                <span class="header__cart-item-remove">Xóa</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="header__cart-item">
+                        <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22120-kdb15iqg8mkv92" alt="" class="header__cart-img">
+                        <div class="header__cart-item-info">
+                            <div class="header__cart-item-head">
+                                <h5 class="header__cart-item-name">Đồng hồ thời trang thể thao nam nữ...</h5>
+                              <div class="header__cart-item-price-wrap">
+                                <span class="header__cart-item-price">300.000đ</span>
+                                <span class="header__cart-item-multifly">x</span>
+                                <span class="header__cart-item-qnt">1</span>
+                              </div>
+                    
+                            </div>
+                            <div class="header__cart-item-body">
+                                <span class="header__cart-item-description">Phân loại hàng: Tốt</span>                                        </span>
+                                <span class="header__cart-item-remove">Xóa</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="btn__view-cart btn btn--primary">Xem giỏ hàng</button>
+            </div>
+        </div>
+
+<!-- TOGGLE MOBILE -->
+        <div class="bars">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+</div>
+</header>
+
+{{-- <header class="header">
     <div class="grid">
         <nav class="header__navbar">
             <ul class="header__navbar-list">
@@ -192,4 +424,4 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}

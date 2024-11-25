@@ -1,258 +1,292 @@
-:root {
-    --primary-color: #ee4d2d;
-    --white-color: #fff;
-    --black-color: #000;
-    --text-color: #333;
+:root{
+    --primary-color:rgb(238,75,43);
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
     --border-color: #dbdbdb;
-    --star-gold-color: #ffce3e;
-
+    --star-gold-color:#FFCE3E;
     --navbar-height: 34px;
     --header-height: 120px;
-    --header-width-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height) - 5px);
 }
-
-*{
-    box-sizing: inherit; 
-    /* ke thua tu the chua no */
-}
-
-html {
-    /* Hack */
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    font-family: 'Roboto', 'sans-serif';
+*{ 
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+html{ 
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
 /* Responsive */
-.grid {
-    width: 1200px; /*kich thuoc toi da la 1200px voi mh lon hon 1200*/
-    max-width: 100%; /* neu nho hon 1200 thi hien thi 100%*/
+.grid{  
+    height: 100%;
+    width: 100%;
+    max-width: 100%;  
     margin: 0 auto;
 }
-
-/* Neu ko muon sd grid */
-.grid__full-width {
+.grid__full-width{
     width: 100%;
 }
-
-.grid__row {
-    /* Cung nam tren 1 hang ngang */
+.grid__row{
+  margin: 0 70px;
+    /* margin-left:-5px ;
+    margin-right: -5px; */
     display: flex;
-    flex-wrap: wrap;
-    /* Neu ptu con lon hon pt cha thi tu dong xun dong */
-    margin-left: -5px;
-    margin-right: -5px;
+    flex-wrap: wrap; /*dùng để điều chỉnh thành 1 hàng ngàng và tự động xún dòng*/
 }
 
-/* Test */
-.grid__column-2 {
-    padding-left: 5px;
+/* Bố cục bên phải phần hiênr thị sp */
+.grid__row1{
+  margin: 0 0;
+    /* margin-left:-5px ;
+    margin-right: -5px; */
+    display: flex;
+    flex-wrap: wrap; /*dùng để điều chỉnh thành 1 hàng ngàng và tự động xún dòng*/
+}
+
+.grid__column-2{
+    padding: 5px;
     padding-right: 5px;
-    width: 16.6667%;
+    width: 16.66667%;
 }
 
-.grid__column-2-4 {
-    padding-left: 5px;
+.grid__column-10{
+    padding: 5px;
+    padding-right: 5px;
+    width:83.33334%;
+}
+
+.grid__column-2-4{
+    padding: 5px;
     padding-right: 5px;
     width: 20%;
 }
 
-.grid__column-10 {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 83.3334%;
-}
-
-.grid__column-12 {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 100%;
-    
-}
-
-/* Animation: giúp QR code hiện lên từ từ */
-@keyframes fadeIn {
-    from {
+/* Animation */
+@keyframes fadeIn{
+    from{
         opacity: 0;
     }
-    to {
+    to{
         opacity: 1;
     }
 }
 
-@keyframes growth {
-    from {
+@keyframes growth{
+    from{
         transform: scale(var(--growth-from));
     }
-    to {
+    to{
         transform: scale(var(--growth-to));
     }
 }
 
+
 /* Modal */
-.modal {
-    /* Tạo lớp phủ toàn màn hình */
+.modal{
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
     left: 0;
-    display: flex;
-    animation: fadeIn linear 0.4s;
-}
-
-.modal__overlay{
-    /* Laáy modal làm gôcs tọa đọ chính */
+  display: flex;
+  }
+  
+  .modal__overlay{  
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    
-}
+  }
+  
+  .modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
+     margin: auto;
+     z-index: 1;
+   animation: growth linear 0.2s;
+  }
 
-.modal__body {
-    --grow-from: 0.7;
-    --grow-to: 1;
+  /* .modal_mobile{
+    display: none;
+  } */
 
-    /* background-color: var(--white-color); */
-    margin: auto;
-    position: relative;
-    /* 2 div overlay và body cùng cáp nhưng nếu position thèn nào sau thì thèn đó sẽ nổi lên trên */
-    z-index: 1;
-    animation: growth linear 0.1s;
-
-}
-
-/* Button style */
-/* chung thì viêt vào btn để còn tận dụng dùng sau này */
-.btn {
+/* button style */
+.btn{
     min-width: 124px;
     height: 34px;
     text-decoration: none;
     border: none;
     border-radius: 2px;
-    font-size: 1.5rem;
-    padding: 0 12px;
-    outline: none;
+    font-size: 1.4rem;
+    padding: 0;
     cursor: pointer;
     color: var(--text-color);
-    display: inline-flex;
+    background: var(--white-color);
+    display:inline-flex;
     justify-content: center;
     align-items: center;
+    line-height: 1.6rem;
 }
 
-.btn.btn--normal:hover {
+.btn.btn--nomar:hover{
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.btn-size-s {
+
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+
+.btn.btn--disabled{
+    color: #949494;
+    background-color: #c3c3c3;
+   cursor: default;
+}
+
+.btn.btn_size_s{
     height: 32px;
     font-size: 12px;
     padding: 0 8px;
 }
-
-.btn.btn-primary {
-    color: var(--white-color);
-    background-color: var(--primary-color);
-}
-
-/* Khi cần vô hiệu hóa 1 nút */
-.btn.btn-disable {
-    color: #ccc;
-    cursor: default;
-    background-color: #999;
-}
-
 /* Selection */
-.select-input {
-    position: relative;
-    min-width: 200px;
-    height: 34px;
-    padding: 0 12px;
-    border-radius: 2px;
-    background-color: var(--white-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.select-input{
+  min-width: 200px;
+height: 34px;
+padding: 0 12px;
+border-radius: 2px;
+background-color: var(--white-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+cursor: pointer;
 }
 
-.select-input-label {
-    font-size: 1.4rem;
+.select-input::after{
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 32px;
+    left: 0;
+    width: 200px;
+    height: 8px;
 
 }
 
-.select-input__icon {
+.select-input:hover .select-input__list{
+    display: block;
+}
+.select-input__lable{
     font-size: 1.4rem;
-    color: rgb(131, 131, 131);
+}
+
+.select-input__icon{
+    font-size: 1.4rem;
+    color: rgb(131,131,131);
     position: relative;
     top: 1px;
 }
 
-.select-input:hover .select-input__list {
-    display: block;
-}
-
-.select-input__list {
+.select-input__list{
     position: absolute;
+    top: 21px;
     left: 0;
     right: 0;
-    top: 25px;
     border-radius: 2px;
     background-color: var(--white-color);
-    padding: 8px 16px;
-    list-style: none;
-    z-index: 1;
-    display: none;
-}
-
-.select-input__link {
+    padding: 10px 0 0 0;
     font-size: 1.4rem;
-    color: var(--text-color);
-    text-decoration: none;
-    display: block;
-    padding: 4px 0;
+    display: none;
+    z-index: 1;
 }
 
-.select-input__link:hover {
-    color: var(--primary-color);
-}
-
-/* pagination */
-.pagination {
+.pagination{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     list-style: none;
 }
 
-.pagination-item {
+.pagination-item{
     margin: 0 12px;
 }
-
-.pagination-item--active .pagination-item__link {
+.pagination-item__link.pagination-item--active{
     background-color: var(--primary-color);
     color: var(--white-color);
+}
+
+.pagination-item__link.pagination-item--active:hover{
+    background-color: #ed674c;
+}
+
+.pagination-item__link{
+display: block;
+text-decoration: none;
+font-size: 2rem;
+color: #939393;
+min-width: 40px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+border-radius: 2px;
+}
+
+.pagination-item__icon{
 
 }
 
-.pagination-item--active .pagination-item__link:hover {
-    background-color: rgba(237, 92, 63, 0.85);
-}
 
-.pagination-item__link {
-    --height: 30px;
-    display: block;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #939393;
-    min-width: 40px;
-    height: var(--height);
-    /* line-height = height: chữ canh giữa theo chiều dọc */
-    line-height: var(--height);
-    /* text-algn: chữ canh giữa theo chiều ngang */
-    text-align: center;
-    border-radius: 2px; 
-}
+.loading-overplay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: black;
+    display: flex;
+  }
+  
+  .loading-overplay .text-box{
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    font-family: 'Bacasime Antique', serif;
+    color: white;
+    font-size: 3.5rem;
+  }
+  
+  .loading-overplay .text-box .text1{
+    animation: loadinglogo 3s infinite ;
+  }
+  
+  @keyframes loadinglogo {
+    0%{
+      scale: 1;
+      opacity: .8;
+    }
+    25%{
+      scale: 1.1;
+      opacity: 1;
+    }
+    50%{
+      scale: 1;
+      opacity: .7;
+    }
+    100%{  
+      opacity: .8;
+    }
+  }
 
+  .product_1{
+    display: block !important;
+  }

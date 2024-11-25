@@ -67,7 +67,7 @@ Route::get('/active-category-product/{category_product_id}', [CategoryProduct::c
 Route::get('/unactive-category-product/{category_product_id}', [CategoryProduct::class, 'unactive_category_product']);
 
 // taoj màu cho mục đc chọn 
-Route::get('danh-muc-san-pham/{slug_category_product}', [CategoryProduct::class, 'show_Category_Product']);
+// Route::get('danh-muc-san-pham/{slug_category_product}', [CategoryProduct::class, 'show_Category_Product']);
 
 Route::get('/edit-category-product/{category_product_id}', [CategoryProduct::class, 'edit_category_product']);
 
@@ -95,7 +95,7 @@ Route::post('/update-brand-product/{brand_product_id}', [BrandProduct::class, 'u
 Route::get('delete-brand-product/{brand_product_id}', [BrandProduct::class, 'delete_brand_product']);
 
 //taoj màu cho mục đc chọn 
-Route::get('/thuong-hieu-san-pham/{brand_product_id}', [BrandProduct::class, 'show_brand_product']);
+// Route::get('/thuong-hieu-san-pham/{brand_product_id}', [BrandProduct::class, 'show_brand_product']);
 
 //product, them sp
 
@@ -110,6 +110,19 @@ Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_produc
 Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
 
 Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
+
+//hien thi theo category, brand
+Route::get('/danh-muc-san-phan/{slug_category_product}', [CategoryProduct::class, 'show_category_home']);
+
+Route::get('/thuong-hieu-san-pham/{brand_slug}', [BrandProduct::class, 'show_brand_home']);
+
+//gia thap->cao or cao->thap
+Route::get('/filter-price/{order}', [HomeController::class, 'filterPrice']);
+Route::get('/filter-category-price/{slug_category_product}/{order}', [CategoryProduct::class, 'filter_category_price']);
+Route::get('/filter-brand-price/{brand_slug}/{order}', [BrandProduct::class, 'filter_brand_price']);
+
+//chi tiết sp
+Route::get('chi-tiet-san-pham/{product_slug}', [ProductController::class, 'details_product']);
 
 Route::get('/slide', function () {
     return view('elements.slide');

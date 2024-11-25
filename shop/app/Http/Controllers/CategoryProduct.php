@@ -172,4 +172,67 @@ class CategoryProduct extends Controller
         Session::put('message', 'Xóa danh mục sản phẩm thành công');
         return Redirect::to('all-category-product');
     }
+
+    // show category product in home
+    public function show_category_home(Request $request, $slug_category_product) {
+        $cate_product = DB::table('tbl_category_product')
+                            ->where('category_status', '1')
+                            ->orderBy('category_id', 'asc')
+                            ->get();
+        $brand_product = DB::table('tbl_brand')
+                            ->where('brand_status', '1')
+                            ->orderBy('brand_id', 'asc')
+                            ->get();
+
+        $category_by_id = DB::table('tbl_product')
+        ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
+        ->join('tbl_brand', 'tbl_brand.brand_id', '=', 'tbl_product.brand_id')
+        ->where('tbl_category_product.slug_category_product', $slug_category_product)
+        ->select('tbl_product.*', 'tbl_category_product.category_name', 'tbl_category_product.slug_category_product', 'tbl_brand.brand_name')
+        ->get();
+
+         // Lưu slug danh mục hiện tại vào Session để sử dụng trong View
+    Session::put('active_category_slug', $slug_category_product);
+
+        return view('pages.category.show_category')
+        ->with('category_by_id', $category_by_id)
+        ->with('category', $cate_product)
+        ->with('brand', $brand_product);
+        
+    }   
+
+    //loc gia sp o trang chu
+    public function filter_category_price(Request $request ,$slug_category_product, $order) {
+        $cate_product = DB::table('tbl_category_product')
+                            ->where('category_status', '1')
+                            ->orderBy('category_id', 'asc')
+                            ->get();
+        $brand_product = DB::table('tbl_brand')
+                            ->where('brand_status', '1')
+                            ->orderBy('brand_id', 'asc')
+                            ->get();
+
+        
+        // $orderDirect = ($order == 'hight-to-low') ? 'desc' : 'asc';
+        $orderdirect = ($order == 'hight_to_low') ? 'desc' : 'asc';
+
+        $category_by_id = DB::table('tbl_product')
+        ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
+        ->join('tbl_brand', 'tbl_brand.brand_id', '=', 'tbl_product.brand_id')
+        ->where('tbl_category_product.slug_category_product', $slug_category_product)
+        ->select('tbl_product.*', 'tbl_category_product.category_name', 'tbl_category_product.slug_category_product', 'tbl_brand.brand_name')
+        ->orderBy('product_price', $orderdirect)
+        ->get();
+
+         // Lưu slug danh mục hiện tại vào Session để sử dụng trong View
+        Session::put('active_category_slug', $slug_category_product);
+
+        return view('pages.category.show_category', [
+            'category_by_id' => $category_by_id,
+            'category' => $cate_product,
+            'brand' => $brand_product,
+            'active_category_slug' => $slug_category_product, // Truyền biến slug vào view
+        ]);
+        
+    }   
 }

@@ -209,4 +209,68 @@ class ProductController extends Controller
         Session::put('message', 'Xóa sản phẩm thành công');
         return redirect('all-product');
     }
+
+    // public function details_product($product_slug, Request $request)
+    // {
+    //     $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id', 'desc')->get();
+    //     $brand_product = DB::table('tbl_brand')->where('brand_status', '1')->orderby('brand_id', 'desc')->get();
+    //     $details_product = DB::table('tbl_product')
+    //         ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
+    //         ->join('tbl_brand', 'tbl_brand.brand_id', '=', 'tbl_product.brand_id')
+    //         ->select('tbl_product.*', 'tbl_category_product.category_name', 'tbl_brand.brand_name', 'tbl_category_product.category_image') 
+    //         ->where('tbl_product.product_slug', $product_slug)
+    //         ->first();
+
+    //     $product_images = [];
+    //     if(!empty($details_product->product_images)) {
+    //         $product_images = json_decode($details_product->product_images, true); //chuyen json thanh mang 
+    //     }   
+        
+    //     // Lấy các sản phẩm cùng danh mục, loại trừ sản phẩm hiện tại
+    //     $related_products = DB::table('tbl_product')
+    //     ->where('category_id', $details_product->category_id)
+    //     ->where('product_slug', '!=', $product_slug)
+    //     ->where('product_status', 1) // Chỉ lấy sản phẩm đang hoạt động
+    //     ->select('product_name', 'product_image', 'product_slug', 'product_price')
+    //     ->get();
+
+    //         return view('pages.sanpham.show_detail')
+    //         ->with('category', $cate_product)
+    //         ->with('brand', $brand_product)
+    //         ->with('product_details', $details_product)
+    //         ->with('related_products', $related_products) // Gửi danh sách sản phẩm liên quan
+    //         ->with('product_images', $product_images); // Gửi danh sách ảnh sản phẩm hiện tại
+    // }
+    public function details_product($product_slug , Request $request){
+        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get(); 
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get(); 
+
+        $details_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_product.product_slug',$product_slug)->get();
+
+        foreach($details_product as $key => $value){
+            $category_id = $value->category_id;
+                //seo 
+                $meta_desc = $value->product_desc;
+                $meta_keywords = $value->product_slug;
+                $meta_title = $value->product_name;
+                $url_canonical = $request->url();
+                //--seo
+            }
+       
+
+        $related_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_slug',[$product_slug])->get();
+
+
+        return view('pages.sanpham.show_details')->with('category',$cate_product)->with('brand',$brand_product)->with('product_details',$details_product)->with('relate',$related_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
+
+    }
+    
+
+
 }

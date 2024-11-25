@@ -1,5 +1,5 @@
 <!-- Slideshow -->
-<div class="row">
+<div class="row" style="margin: 0 50px">
     <div class="grid__column-12">
         <div class=" slideshow-container">
 
